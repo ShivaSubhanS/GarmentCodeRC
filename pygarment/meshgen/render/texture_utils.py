@@ -65,9 +65,24 @@ def texture_mesh_islands(
 def _uv_connected_components(face_texture_coords):
 
     # Find connected components of face and vertex texture coords
-    face_components = igl.facet_components(face_texture_coords)
-    vert_components = igl.vertex_components(face_texture_coords)
-    num_ccs = max(face_components) + 1
+    face_result = igl.facet_components(face_texture_coords)
+    vert_result = igl.vertex_components(face_texture_coords)
+    
+    # Handle different return formats from igl versions
+    # Newer versions: (num_components, component_array)
+    # Older versions: just component_array
+    if isinstance(face_result, tuple):
+        num_face_ccs, face_components = face_result
+    else:
+        face_components = face_result
+        num_face_ccs = int(face_components.max() + 1)
+    
+    if isinstance(vert_result, tuple):
+        _, vert_components = vert_result
+    else:
+        vert_components = vert_result
+    
+    num_ccs = num_face_ccs
 
     return vert_components, face_components, num_ccs
 

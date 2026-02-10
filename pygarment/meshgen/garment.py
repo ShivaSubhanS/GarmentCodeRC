@@ -1,8 +1,13 @@
+import sys
 import igl
 import json
 import pickle
 import numpy as np
 import yaml
+
+# Add custom Warp fork to path
+if '/tmp/NvidiaWarp-GarmentCode' not in sys.path:
+    sys.path.insert(0, '/tmp/NvidiaWarp-GarmentCode')
 
 import warp as wp
 
