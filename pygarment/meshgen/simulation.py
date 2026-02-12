@@ -22,8 +22,8 @@ import signal
 import trimesh
 
 # Add custom Warp fork to path
-if '/tmp/NvidiaWarp-GarmentCode' not in sys.path:
-    sys.path.insert(0, '/tmp/NvidiaWarp-GarmentCode')
+if '/home/sss/project/pose_3d/NvidiaWarp-GarmentCode' not in sys.path:
+    sys.path.insert(0, '/home/sss/project/pose_3d/NvidiaWarp-GarmentCode')
 
 # Warp
 import warp as wp
