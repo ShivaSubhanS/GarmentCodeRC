@@ -1,7 +1,8 @@
 import numpy as np
 import sys
+import os
 
-sys.path.append('/is/cluster/fast/sbian/github/GarmentCodeV2/')
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 import pygarment as pyg
 
 

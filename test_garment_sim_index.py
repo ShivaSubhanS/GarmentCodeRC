@@ -6,7 +6,8 @@ from pathlib import Path
 import shutil
 
 # from llava.garment_utils_v2 import run_simultion_warp
-sys.path.append('/is/cluster/fast/sbian/github/GarmentCodeV2/')
+GARMENTCODE_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(GARMENTCODE_DIR)
 from assets.garment_programs.meta_garment import MetaGarment
 from assets.bodies.body_params import BodyParameters
 
@@ -30,7 +31,7 @@ def run_simultion_warp(pattern_spec, sim_config, output_path):
         body_name='mean_all',    # 'f_smpl_average_A40'
         smpl_body=False,   # NOTE: depends on chosen body model
         add_timestamp=False,
-        system_path='/is/cluster/fast/sbian/github/GarmentCodeV2/system.json'
+        system_path=os.path.join(GARMENTCODE_DIR, 'system.json')
     )
 
     # Generate and save garment box mesh (if not existent)

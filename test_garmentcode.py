@@ -3,8 +3,9 @@ import shutil
 from pathlib import Path
 import yaml
 import sys
+import os
 
-sys.path.insert(0, '/is/cluster/fast/sbian/github/GarmentCodeV2')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from assets.garment_programs.meta_garment import MetaGarment
 from assets.bodies.body_params import BodyParameters
