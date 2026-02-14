@@ -656,7 +656,7 @@ class ParametrizedPattern(BasicPattern):
 
     def _influence_after_edge_loop_update(self, infl_list, panel_name, new_edge_ids):
         """
-            Update the list of parameter\constraint influence with the new edge ids of given panel.
+            Update the list of parameter\\constraint influence with the new edge ids of given panel.
             
             flipped -- indicates if in the new edges start & end vertices have been swapped
         """
